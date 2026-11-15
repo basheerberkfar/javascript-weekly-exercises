@@ -19,12 +19,12 @@ npm test
 
 ```js
 const started = Date.now();
-for (const value of ['A', 'B', 'C']) await delayResult(value, 100);
-console.log('sequential ms:', Date.now() - started);
+for (const value of ["A", "B", "C"]) await delayResult(value, 100);
+console.log("sequential ms:", Date.now() - started);
 
 const parallelStarted = Date.now();
-await Promise.all(['A', 'B', 'C'].map((value) => delayResult(value, 100)));
-console.log('parallel ms:', Date.now() - parallelStarted);
+await Promise.all(["A", "B", "C"].map((value) => delayResult(value, 100)));
+console.log("parallel ms:", Date.now() - parallelStarted);
 ```
 
 7. `Promise.allSettled` waits for all five outcomes; filtering by `status` separates values from errors without short-circuiting.
@@ -48,7 +48,3 @@ Synchronous code runs first. Promise callbacks run as microtasks before timer ca
 ## End-of-week note
 
 This week I practiced destructuring, Set and Map, module design, class interfaces, promises, partial failure handling, and event-loop ordering. I used tests to confirm the expected behavior and refactored naming, state ownership, and validation after review. Next, I want to apply these patterns in a small feature that consumes a real API and handles network failures.
-
-## Pull request
-
-PR link: [paste your repository PR URL here]
